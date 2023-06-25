@@ -1,7 +1,21 @@
 <?php session_start(); 
-if (!isset($_SESSION['firstname'])) {
+include 'connect.php';
+if (isset($_COOKIE['remember_token'])) {
+    $email = $_COOKIE['remember_token'];
+
+    // Retrieve user details from the database using the email
+    $loginquery = "SELECT * FROM `userdtls` WHERE email='$email' and state='active'";
+    $result = mysqli_query($con, $loginquery);
+    $emailcount = mysqli_num_rows($result);
+
+    if ($emailcount) {
+      $db = mysqli_fetch_array($result);
+      $_SESSION['firstname'] = $db['Full_name'];
+    } 
+  } else if (!isset($_SESSION['firstname'])) {
     header('location:login.php');
-}
+  }
+  
 ?>
 
 <!DOCTYPE html>
