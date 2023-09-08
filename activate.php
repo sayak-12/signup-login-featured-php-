@@ -6,6 +6,7 @@ if (isset($_GET['token'])) {
     $sql = "UPDATE `userdtls` SET `state`='active' WHERE token = '$token'";
     $result=mysqli_query($con,$sql);
     if($result){
+        $_SESSION['msg']="Congratulations, your email has been verified. Please login!";
         $sql1 = "SELECT * FROM `userdtls` WHERE token = '$token'";
     $result1=mysqli_query($con,$sql1);
     $arr = mysqli_fetch_array($result1);

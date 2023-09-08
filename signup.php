@@ -79,14 +79,14 @@ session_start();
                         To: '<?php echo $email; ?>',
                         From: "sayakraha12@gmail.com",
                         Subject: "Email Verification Link",
-                        Body: "<?php echo "Hi, Good day! Here is your email activation link: " . "http://localhost/mydocs/signup-login-ftr/activate.php?token=$token"; ?>"
-                    }).then(
-                        message => alert(message)
-                    );
+                        Body: "<?php echo "Hi, Good day! Here is your email activation link: " . "http://localhost/mydocs/signup-login-featured-php-/activate.php?token=$token"; ?>"
+                    }).then(function (message) {
+                        alert(message);
+                        window.location.href = 'login.php?inemail=<?php echo $email; ?>';
+                    });
                 </script>
 
                 <?php
-                    // header('location:login.php?inemail='.$email);
             } else {
                 ?>
                 <script>
@@ -96,10 +96,10 @@ session_start();
             }
         } else {
             ?>
-            <script>
-                alert("Email already exists");
-            </script>
-            <?php
+        <script>
+            alert("Email already exists");
+        </script>
+    <?php
         }
     }
 
