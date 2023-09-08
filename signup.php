@@ -15,7 +15,7 @@ session_start();
     </div>
     <div class="container">
         <h2>Sign Up Now</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <form  method="post">
             <div class="form-group mt-2">
                 <label for="firstname">Full Name</label>
                 <input required type="text" class="form-control" id="exampleInputfirstname" name="firstname">
@@ -86,7 +86,7 @@ session_start();
                 </script>
 
                 <?php
-                    header('location:login.php?inemail='.$email);
+                    // header('location:login.php?inemail='.$email);
             } else {
                 ?>
                 <script>

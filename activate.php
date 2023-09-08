@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include 'connect.php';
-if ($_GET['token']) {
+if (isset($_GET['token'])) {
     $token  = $_GET['token'];
     $sql = "UPDATE `userdtls` SET `state`='active' WHERE token = '$token'";
     $result=mysqli_query($con,$sql);
