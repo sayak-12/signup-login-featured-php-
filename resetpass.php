@@ -49,7 +49,7 @@ include 'connect.php';
                         To: '<?php echo $email; ?>',
                         From: "sayakraha12@gmail.com",
                         Subject: "Password Reset Link",
-                        Body: "<?php echo "Hi, Good day! Here is your Password reset link: " . "http://localhost:3000/reset.php?token=$token"; ?>"
+                        Body: "<?php echo "Hi, Good day! Here is your Password reset link: " . "http://localhost/mydocs/signup-login-featured-php-/reset.php?token=$token"; ?>"
                     }).then(function (message) {
                         alert(message);
                         window.location.href = 'login.php?inemail=<?php echo $email; ?>';

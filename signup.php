@@ -79,7 +79,7 @@ session_start();
                         To: '<?php echo $email; ?>',
                         From: "sayakraha12@gmail.com",
                         Subject: "Email Verification Link",
-                        Body: "<?php echo "Hi, Good day! Here is your email activation link: " . "http://localhost:3000/activate.php?token=$token"; ?>"
+                        Body: "<?php echo "Hi, Good day! Here is your email activation link: " . "http://localhost/mydocs/signup-login-featured-php-/activate.php?token=$token"; ?>"
                     }).then(function (message) {
                         alert(message);
                         window.location.href = 'login.php?inemail=<?php echo $email; ?>';

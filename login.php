@@ -46,7 +46,7 @@ if ((isset($_COOKIE['remember_token']))) {
       </div>
       <div class="form-group">
 
-        <input type="checkbox" class="d-inline" id="exampleInputPassword" name="rmb" checked>
+        <input type="checkbox" class="d-inline" id="" name="rmb" checked>
         <label for="rmb">Remember me</label>
       </div>
       <button type="submit" class="btn btn-primary w-100" name="login">Log in</button>
@@ -70,6 +70,7 @@ if ((isset($_COOKIE['remember_token']))) {
         if (password_verify($password, $dbpass)) {
           if (isset($_POST['rmb'])) {
             setcookie('remember_token', $email, time() + (30 * 24 * 60 * 60), '/'); // Cookie expires in 30 days
+            
             ?>
             <script>
               alert("Login Successful");
